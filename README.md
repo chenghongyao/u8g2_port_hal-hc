@@ -1,6 +1,6 @@
 # 说明
 
-基于 STM32 HAL 库，为`u8g2`提供 IO 支持。
+基于 STM32 HAL 库，为[u8g2-cmake](https://github.com/chenghongyao/u8g2-cmake)提供 IO 支持。
 
 # 配置
 
@@ -31,7 +31,7 @@ add_executable(app.elf main.c)
 target_link_libraries(app.elf
     PRIVATE
     stm32cube::core
-    u8g2
+    u8g2::ls013b7dh03
     u8g2_port_hal)
 
 ```
