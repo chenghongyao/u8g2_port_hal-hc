@@ -14,7 +14,7 @@
   - U8G2_RESET
   - U8G2_SCL
   - U8G2_SDA
-- 输出端口
+- 输入端口
   - U8G2_SELECT
   - U8G2_NEXT
   - U8G2_PREV
