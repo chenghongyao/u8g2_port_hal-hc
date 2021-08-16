@@ -23,7 +23,6 @@ static void delay_us(uint32_t us)
         oldTicks = currentTicks;
     } while (nbTicks > elapsedTicks);
 }
-UART_HandleTypeDef huart1;
 
 uint8_t u8x8_gpio_and_delay_hal(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_ptr) {
     switch (msg) {
@@ -49,7 +48,6 @@ uint8_t u8x8_gpio_and_delay_hal(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void
             break;                    // arg_int=1: delay by 5us, arg_int = 4: delay by 1.25us
 #if defined(U8G2_SCK_GPIO_Port) && defined(U8G2_SCK_Pin)
         case U8X8_MSG_GPIO_SPI_CLOCK:
-//            HAL_UART_Transmit(&huart1,(uint8_t*)"clk",3,HAL_MAX_DELAY);
             HAL_GPIO_WritePin(U8G2_SCK_GPIO_Port,U8G2_SCK_Pin,arg_int==0?GPIO_PIN_RESET:GPIO_PIN_SET);
             break;
 #endif
